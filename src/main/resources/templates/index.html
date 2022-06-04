@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8">
     <title>Recipe Home</title>
 </head>
 <body>
-<h1 th:text="'My Recipes!'">My Recipes</h1>
+<!--/*@thymesVar id="owner" type="guru.springframework.spring5recipeapp.repositories.RecipeRepository"*/-->
+<h1>My Recipes</h1>
+
+<table id="recipes" class="table table-striped">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Recipe Description</th>
+        <th>Prep Time</th>
+        <th>Cook Time</th>
+        <th>Servings</th>
+        <th>Source</th>
+        <th>URL</th>
+        <th>Directions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="recipe : ${recipes}">
+        <td th:text="${recipe.Id}">1</td>
+        <td th:text="${recipe.description}">Recipe Description</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
