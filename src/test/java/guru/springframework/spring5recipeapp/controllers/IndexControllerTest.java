@@ -1,5 +1,7 @@
 package guru.springframework.spring5recipeapp.controllers;
 
+import guru.springframework.spring5recipeapp.converters.RecipeCommandToRecipe;
+import guru.springframework.spring5recipeapp.converters.RecipeToRecipeCommand;
 import guru.springframework.spring5recipeapp.domain.Recipe;
 import guru.springframework.spring5recipeapp.services.RecipeService;
 import org.junit.Before;
@@ -61,7 +63,7 @@ public class IndexControllerTest {
 
         ArgumentCaptor<Set<Recipe>> argumentCaptor = ArgumentCaptor.forClass(Set.class);
         //  When
-
+        //  Is encapsulated with assertEquals below.
 
         //  Then
         assertEquals("index", indexController.getIndexPage(model));
